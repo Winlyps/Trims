@@ -24,11 +24,22 @@ public final class Trims extends JavaPlugin implements CommandExecutor {
         MATERIAL_MAP.put("diamond", Material.DIAMOND);
         MATERIAL_MAP.put("netherite", Material.NETHERITE_INGOT);
 
-        PATTERN_MAP.put("vex", "minecraft:vex");
-        PATTERN_MAP.put("tide", "minecraft:tide");
-        PATTERN_MAP.put("wild", "minecraft:wild");
-        PATTERN_MAP.put("ward", "minecraft:ward");
+        PATTERN_MAP.put("coast", "minecraft:coast");
+        PATTERN_MAP.put("dune", "minecraft:dune");
         PATTERN_MAP.put("eye", "minecraft:eye");
+        PATTERN_MAP.put("host", "minecraft:host");
+        PATTERN_MAP.put("raiser", "minecraft:raiser");
+        PATTERN_MAP.put("rib", "minecraft:rib");
+        PATTERN_MAP.put("sentry", "minecraft:sentry");
+        PATTERN_MAP.put("shaper", "minecraft:shaper");
+        PATTERN_MAP.put("silence", "minecraft:silence");
+        PATTERN_MAP.put("snout", "minecraft:snout");
+        PATTERN_MAP.put("spire", "minecraft:spire");
+        PATTERN_MAP.put("tide", "minecraft:tide");
+        PATTERN_MAP.put("vex", "minecraft:vex");
+        PATTERN_MAP.put("ward", "minecraft:ward");
+        PATTERN_MAP.put("wayfinder", "minecraft:wayfinder");
+        PATTERN_MAP.put("wild", "minecraft:wild");
     }
 
     @Override
