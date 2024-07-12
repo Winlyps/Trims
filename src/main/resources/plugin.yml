@@ -1,0 +1,9 @@
+name: Trims
+version: '${version}'
+main: winlyps.trims.Trims
+api-version: '1.20'
+authors: [Winlyps]
+commands:
+  trims:
+    description: Apply custom trims to leather helmets.
+    usage: /trims <material>
