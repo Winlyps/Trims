@@ -5,11 +5,14 @@ import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public final class Trims extends JavaPlugin implements CommandExecutor {
@@ -23,6 +26,11 @@ public final class Trims extends JavaPlugin implements CommandExecutor {
         MATERIAL_MAP.put("gold", Material.GOLD_INGOT);
         MATERIAL_MAP.put("diamond", Material.DIAMOND);
         MATERIAL_MAP.put("netherite", Material.NETHERITE_INGOT);
+        MATERIAL_MAP.put("emerald", Material.EMERALD);
+        MATERIAL_MAP.put("redstone", Material.REDSTONE);
+        MATERIAL_MAP.put("lapis", Material.LAPIS_LAZULI);
+        MATERIAL_MAP.put("amethyst", Material.AMETHYST_SHARD);
+        MATERIAL_MAP.put("copper", Material.COPPER_INGOT);
 
         PATTERN_MAP.put("coast", "minecraft:coast");
         PATTERN_MAP.put("dune", "minecraft:dune");
@@ -44,8 +52,9 @@ public final class Trims extends JavaPlugin implements CommandExecutor {
 
     @Override
     public void onEnable() {
-        // Register the command executor
+        // Register the command executor and tab completer
         getCommand("trims").setExecutor(this);
+        getCommand("trims").setTabCompleter(new TrimsTabCompleter());
     }
 
     @Override
@@ -88,5 +97,15 @@ public final class Trims extends JavaPlugin implements CommandExecutor {
         }
 
         return true;
+    }
+
+    public class TrimsTabCompleter implements TabCompleter {
+        @Override
+        public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
+            if (args.length == 1) {
+                return new ArrayList<>(MATERIAL_MAP.keySet());
+            }
+            return null;
+        }
     }
 }
